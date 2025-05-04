@@ -77,6 +77,23 @@ body {
   transform: scale(1.05);
   box-shadow: 0 0 20px #a29bfe, 0 0 30px #6c5ce7;
 }
+.remove-button {
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #e74c3c;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  margin-left: 10px;
+}
+
+.remove-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff6b6b, 0 0 30px #ff4d4d;
+}
 
 .quest-list {
   display: flex;
