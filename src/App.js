@@ -24,10 +24,18 @@ function App() {
     setQuests([...quests, { name: enteredvalue }]);
     setevalue("");
   }
-
+function removeAll() {
+    axios
+      .delete("http://localhost:5000/removeall") // Backend endpoint to delete all tasks
+      .then(() => {
+        setQuests([]); // Clear frontend state
+        setevalue(""); // Clear input
+      })
+      .catch((err) => console.error("Failed to delete tasks:", err));
+  }
   return (
     <div className="app-container">
-      <h1 className="title">📝 My Stylish To-Do List</h1>
+      <h1 className="title">Questify</h1>
 
       <div className="input-group">
         <input
@@ -37,8 +45,11 @@ function App() {
           onChange={handlevalue}
         />
         <button className="add-button" onClick={add}>
-          ➕ Add
+          Add
         </button>
+            <button className="remove-button" onClick={removeAll}>
+    Remove All
+      </button>
       </div>
 
       <div className="quest-list">
